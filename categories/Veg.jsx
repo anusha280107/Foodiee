@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./Categories.css";
+import "./categories.css";
 
 function Veg() {
   const navigate = useNavigate();
