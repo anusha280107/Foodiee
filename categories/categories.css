@@ -1,0 +1,101 @@
+/* ================= CATEGORY PAGE ================= */
+
+.category-page {
+  min-height: 100vh;
+  padding: 40px 8%;
+  background: #f8f9fa;
+}
+
+.category-page h1 {
+  text-align: center;
+  font-size: 40px;
+  color: #ff4d4d;
+  margin-bottom: 35px;
+}
+
+/* ================= FOOD GRID ================= */
+
+.food-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* ================= FOOD CARD ================= */
+
+.food-card {
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.food-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.food-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.food-card h3 {
+  margin-top: 15px;
+  font-size: 24px;
+  color: #333;
+}
+
+.price {
+  color: #ff5722;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.rating {
+  color: #f4b400;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.food-card button {
+  width: 85%;
+  padding: 12px;
+  margin: 15px 0 20px;
+  border: none;
+  border-radius: 8px;
+  background: #ff4d4d;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.food-card button:hover {
+  background: #e63946;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .category-page {
+    padding: 20px;
+  }
+
+  .category-page h1 {
+    font-size: 32px;
+  }
+
+  .food-card img {
+    height: 180px;
+  }
+
+  .food-card h3 {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,1125 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===========================
+   GLOBAL
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f6f7fb;
+    color:#333;
+}
+
+a{
+    text-decoration:none;
+}
+
+button{
+    cursor:pointer;
+    border:none;
+    transition:.3s;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    background:#ff4d4d;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.logo{
+    font-size:32px;
+    font-weight:700;
+    color:white;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:25px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:white;
+    font-size:17px;
+    font-weight:500;
+}
+
+.nav-links a:hover{
+    color:#ffe600;
+}
+
+.admin-btn,
+.dashboard-btn{
+    background:white;
+    color:#ff4d4d !important;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:600;
+}
+
+.logout-btn{
+    background:#222;
+    color:white;
+    padding:10px 18px;
+    border-radius:30px;
+}
+
+.logout-btn:hover{
+    background:red;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+    height:85vh;
+    background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content{
+    width:80%;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    margin-bottom:35px;
+}
+
+.hero input{
+    width:60%;
+    padding:18px;
+    border:none;
+    border-radius:40px;
+    font-size:18px;
+    outline:none;
+}
+
+/* ===========================
+   CATEGORY
+=========================== */
+
+.categories{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    padding:40px;
+}
+
+.categories button{
+    background:#ff4d4d;
+    color:white;
+    padding:12px 25px;
+    border-radius:30px;
+    font-size:16px;
+    font-weight:600;
+}
+
+.categories button:hover{
+    background:#222;
+}
+
+/* ===========================
+   FOOD SECTION
+=========================== */
+
+.food-section{
+    padding:70px 8%;
+}
+
+.food-section h2{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:45px;
+}
+
+.food-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+/* ===========================
+   FOOD CARD
+=========================== */
+
+.food-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    transition:.35s;
+}
+
+.food-card:hover{
+    transform:translateY(-12px);
+}
+
+.food-card img{
+    height:230px;
+    object-fit:cover;
+}
+
+.food-details{
+    padding:20px;
+}
+
+.food-details h3{
+    font-size:25px;
+    margin-bottom:8px;
+}
+
+.category{
+    color:#ff4d4d;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.description{
+    color:#666;
+    line-height:1.6;
+    margin-bottom:15px;
+}
+
+.price-rating{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.price{
+    font-size:22px;
+    font-weight:bold;
+    color:#ff4d4d;
+}
+
+.rating{
+    font-weight:bold;
+}
+
+.order-btn{
+    width:100%;
+    background:#ff4d4d;
+    color:white;
+    padding:14px;
+    border-radius:12px;
+    font-size:16px;
+}
+
+.order-btn:hover{
+    background:#222;
+}
+
+/* ===========================
+   WHY CHOOSE US
+=========================== */
+
+.why-us{
+    padding:80px 8%;
+    background:white;
+}
+
+.why-us h2{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:30px;
+}
+
+.feature{
+    background:#fff5f5;
+    border-radius:18px;
+    text-align:center;
+    padding:35px 25px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+    font-size:40px;
+}
+
+.feature:hover{
+    transform:translateY(-10px);
+}
+
+.feature h3{
+    margin:20px 0 10px;
+    font-size:24px;
+}
+
+.feature p{
+    color:#666;
+    line-height:1.6;
+}/* ==========================================
+   LOGIN PAGE
+========================================== */
+
+.login-page{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ffecd2,#fcb69f);
+    padding:40px;
+}
+
+.login-box{
+    width:420px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+    text-align:center;
+}
+
+.login-box h1{
+    color:#ff4d4d;
+    margin-bottom:10px;
+}
+
+.login-box p{
+    color:#666;
+    margin-bottom:25px;
+}
+
+.login-box input{
+    width:100%;
+    padding:15px;
+    margin:12px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+}
+
+.login-box input:focus{
+    border:2px solid #ff4d4d;
+}
+
+.login-box button{
+    width:100%;
+    background:#ff4d4d;
+    color:white;
+    padding:15px;
+    border-radius:10px;
+    font-size:18px;
+    margin-top:15px;
+}
+
+.login-box button:hover{
+    background:#222;
+}
+
+.login-info{
+    margin-top:25px;
+    padding:20px;
+    background:#fff5f5;
+    border-radius:10px;
+}
+
+/* ==========================================
+   DASHBOARD
+========================================== */
+
+.dashboard{
+    padding:50px 8%;
+    background:#f5f7fb;
+    min-height:100vh;
+}
+
+.dashboard-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.dashboard-header h1{
+    color:#ff4d4d;
+}
+
+.welcome-card{
+    background:linear-gradient(135deg,#ff4d4d,#ff884d);
+    color:white;
+    padding:35px;
+    border-radius:18px;
+    margin-bottom:40px;
+}
+
+.welcome-card h2{
+    margin-bottom:10px;
+}
+
+.stats-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-bottom:40px;
+}
+
+.stat-card{
+    background:white;
+    text-align:center;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-8px);
+}
+
+.stat-card h3{
+    color:#666;
+    margin-bottom:15px;
+}
+
+.stat-card h1{
+    color:#ff4d4d;
+    font-size:42px;
+}
+
+.dashboard-menu{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-bottom:40px;
+}
+
+.menu-card{
+    background:white;
+    padding:35px;
+    text-align:center;
+    border-radius:18px;
+    color:#333;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.menu-card:hover{
+    transform:translateY(-8px);
+}
+
+.menu-card .icon{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.menu-card h2{
+    color:#ff4d4d;
+    margin-bottom:15px;
+}
+
+.admin-info{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+/* ==========================================
+   ADD & EDIT FOOD
+========================================== */
+
+.add-food,
+.edit-food{
+    background:#f5f7fb;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding:50px;
+}
+
+.form-container{
+    width:700px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.form-container h1{
+    text-align:center;
+    color:#ff4d4d;
+    margin-bottom:30px;
+}
+
+.form-container input,
+.form-container textarea{
+    width:100%;
+    padding:15px;
+    margin:12px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+}
+
+.form-container input:focus,
+.form-container textarea:focus{
+    border:2px solid #ff4d4d;
+}
+
+.image-preview{
+    margin:20px 0;
+    text-align:center;
+}
+
+.image-preview img{
+    width:250px;
+    height:170px;
+    object-fit:cover;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+.save-btn,
+.update-btn{
+    width:100%;
+    background:#ff4d4d;
+    color:white;
+    padding:16px;
+    font-size:18px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+.save-btn:hover,
+.update-btn:hover{
+    background:#222;
+}
+
+/* ==========================================
+   MANAGE FOODS
+========================================== */
+
+.manage-foods{
+    padding:50px 8%;
+    background:#f5f7fb;
+    min-height:100vh;
+}
+
+.manage-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.manage-header h1{
+    color:#ff4d4d;
+}
+
+.add-btn{
+    background:#28a745;
+    color:white;
+    padding:12px 25px;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.add-btn:hover{
+    background:#1d7d33;
+}
+
+.search-box{
+    width:100%;
+    padding:15px;
+    margin-bottom:25px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    font-size:16px;
+}
+
+.food-table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.food-table th{
+    background:#ff4d4d;
+    color:white;
+    padding:15px;
+}
+
+.food-table td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+}
+
+.food-table tr:hover{
+    background:#fff7f7;
+}
+
+.table-image{
+    width:90px;
+    height:70px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.edit-btn{
+    background:#007bff;
+    color:white;
+    padding:8px 15px;
+    border-radius:8px;
+    margin-right:8px;
+}
+
+.edit-btn:hover{
+    background:#0056b3;
+}
+
+.delete-btn{
+    background:#dc3545;
+    color:white;
+    padding:8px 15px;
+    border-radius:8px;
+}
+
+.delete-btn:hover{
+    background:#b52b37;
+}/* ==========================================
+   RECIPES PAGE
+========================================== */
+
+.recipes{
+    padding:60px 8%;
+    background:#f8f9fb;
+    min-height:100vh;
+}
+
+.recipe-banner{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.recipe-banner h1{
+    font-size:45px;
+    color:#ff4d4d;
+}
+
+.recipe-banner p{
+    color:#666;
+    margin-top:10px;
+}
+
+.recipe-search{
+    display:flex;
+    justify-content:center;
+    margin-bottom:40px;
+}
+
+.recipe-search input{
+    width:500px;
+    max-width:100%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:30px;
+    outline:none;
+    font-size:16px;
+}
+
+.recipe-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.recipe-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.recipe-card:hover{
+    transform:translateY(-10px);
+}
+
+.recipe-card img{
+    height:220px;
+    object-fit:cover;
+}
+
+.recipe-content{
+    padding:20px;
+}
+
+.recipe-content h2{
+    color:#ff4d4d;
+    margin-bottom:10px;
+}
+
+.recipe-content p{
+    margin:8px 0;
+    color:#555;
+}
+
+.recipe-btn{
+    width:100%;
+    margin-top:15px;
+    padding:12px;
+    background:#ff4d4d;
+    color:white;
+    border-radius:10px;
+}
+
+.recipe-btn:hover{
+    background:#222;
+}
+
+/* ==========================================
+   BUILD COMBO
+========================================== */
+
+.combo-page{
+    padding:60px 8%;
+    background:#f5f7fb;
+}
+
+.combo-page h1{
+    text-align:center;
+    color:#ff4d4d;
+}
+
+.combo-page>p{
+    text-align:center;
+    margin:15px 0 40px;
+    color:#666;
+}
+
+.combo-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:30px;
+}
+
+.combo-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+    text-align:center;
+    transition:.3s;
+}
+
+.combo-card:hover{
+    transform:translateY(-8px);
+}
+
+.combo-card img{
+    height:200px;
+    object-fit:cover;
+}
+
+.combo-card h3{
+    margin:15px 0 5px;
+}
+
+.combo-card h4{
+    color:#ff4d4d;
+    margin-bottom:15px;
+}
+
+.combo-btn{
+    margin-bottom:20px;
+    padding:12px 20px;
+    background:#ff4d4d;
+    color:white;
+    border-radius:10px;
+}
+
+.combo-btn:hover{
+    background:#222;
+}
+
+.selected-combo{
+    margin-top:50px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+.combo-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:15px 0;
+}
+
+.remove-btn{
+    background:#dc3545;
+    color:white;
+    padding:8px 15px;
+    border-radius:8px;
+}
+
+.checkout-btn{
+    width:100%;
+    margin-top:25px;
+    padding:15px;
+    background:#28a745;
+    color:white;
+    border-radius:10px;
+    font-size:17px;
+}
+
+/* ==========================================
+   ABOUT PAGE
+========================================== */
+
+.about{
+    background:#f8f9fb;
+}
+
+.about-banner{
+    background:linear-gradient(135deg,#ff4d4d,#ff884d);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.about-banner h1{
+    font-size:50px;
+}
+
+.about-section{
+    display:flex;
+    gap:50px;
+    align-items:center;
+    padding:70px 8%;
+    flex-wrap:wrap;
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h2{
+    color:#ff4d4d;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.about-image{
+    flex:1;
+}
+
+.about-image img{
+    border-radius:20px;
+}
+
+.mission{
+    padding:60px 8%;
+}
+
+.mission h2{
+    text-align:center;
+    color:#ff4d4d;
+    margin-bottom:40px;
+}
+
+.mission-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.mission-card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.about-stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    padding:60px 8%;
+}
+
+.stat{
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.stat h1{
+    color:#ff4d4d;
+}
+
+.team{
+    padding:60px 8%;
+}
+
+.team h2{
+    text-align:center;
+    color:#ff4d4d;
+    margin-bottom:40px;
+}
+
+.team-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.team-card{
+    background:white;
+    text-align:center;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.team-card img{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    margin:auto;
+    margin-bottom:20px;
+}
+
+/* ==========================================
+   CONTACT PAGE
+========================================== */
+
+.contact{
+    padding:60px 8%;
+}
+
+.contact-banner{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.contact-banner h1{
+    color:#ff4d4d;
+    font-size:45px;
+}
+
+.contact-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-info,
+.contact-form{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.info-card{
+    margin:25px 0;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:15px;
+    margin:12px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+
+.contact-form button{
+    width:100%;
+    padding:15px;
+    background:#ff4d4d;
+    color:white;
+    border-radius:10px;
+}
+
+.map-section{
+    margin-top:50px;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer{
+    background:#222;
+    color:white;
+    padding:60px 8% 20px;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:40px;
+}
+
+.footer-box h2,
+.footer-box h3{
+    margin-bottom:20px;
+}
+
+.footer-box a{
+    display:block;
+    color:#ddd;
+    margin:10px 0;
+}
+
+.footer-box a:hover{
+    color:#ff4d4d;
+}
+
+.social-icons{
+    display:flex;
+    gap:15px;
+    font-size:28px;
+}
+
+.footer hr{
+    margin:35px 0 20px;
+    border-color:#444;
+}
+
+.copyright{
+    text-align:center;
+    color:#bbb;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+.navbar{
+    flex-direction:column;
+    gap:20px;
+}
+
+.nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero input{
+    width:90%;
+}
+
+.about-section{
+    flex-direction:column;
+}
+
+.contact-container{
+    grid-template-columns:1fr;
+}
+
+.dashboard-header,
+.manage-header{
+    flex-direction:column;
+    gap:20px;
+}
+
+.food-table{
+    display:block;
+    overflow-x:auto;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+    height:70vh;
+}
+
+.hero h1{
+    font-size:34px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.logo{
+    font-size:26px;
+}
+
+.food-section h2,
+.why-us h2,
+.recipe-banner h1,
+.about-banner h1,
+.contact-banner h1{
+    font-size:34px;
+}
+
+.recipe-search input{
+    width:100%;
+}
+
+.login-box,
+.form-container{
+    width:100%;
+}
+
+}
