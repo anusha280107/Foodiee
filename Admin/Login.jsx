@@ -62,20 +62,6 @@ function Login() {
 
         </form>
 
-        <div className="login-info">
-
-          <h3>Demo Credentials</h3>
-
-          <p>
-            <strong>Username:</strong> admin
-          </p>
-
-          <p>
-            <strong>Password:</strong> admin123
-          </p>
-
-        </div>
-
       </div>
 
     </div>

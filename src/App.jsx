@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 // Components
@@ -13,7 +13,6 @@ import Recipes from "../pages/Recipes";
 import RecipeDetails from "../pages/RecipeDetails";
 import BuildCombo from "../pages/BuildCombo";
 import Checkout from "../pages/Checkout";
-
 
 // Category Pages
 import Veg from "../categories/Veg";
@@ -37,46 +36,48 @@ function App() {
       <Navbar />
 
       <Routes>
+
         {/* User Pages */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+
         <Route path="/recipes" element={<Recipes />} />
         <Route path="/recipe/:id" element={<RecipeDetails />} />
+
         <Route path="/buildcombo" element={<BuildCombo />} />
         <Route path="/checkout" element={<Checkout />} />
-        
 
-        {/* Category Pages */}
+        {/* Categories */}
         <Route path="/veg" element={<Veg />} />
         <Route path="/nonveg" element={<NonVeg />} />
         <Route path="/desserts" element={<Desserts />} />
         <Route path="/drinks" element={<Drinks />} />
         <Route path="/healthy" element={<Healthy />} />
 
-        {/* Admin Login */}
+        {/* Admin */}
         <Route path="/admin" element={<Login />} />
 
-        {/* Protected Admin Pages */}
         <Route
           path="/dashboard"
-          element={isLoggedIn ? <Dashboard /> : <Navigate to="/admin" replace />}
+          element={isLoggedIn ? <Dashboard /> : <Login />}
         />
 
         <Route
           path="/addfood"
-          element={isLoggedIn ? <AddFood /> : <Navigate to="/admin" replace />}
+          element={isLoggedIn ? <AddFood /> : <Login />}
         />
 
         <Route
           path="/managefoods"
-          element={isLoggedIn ? <ManageFoods /> : <Navigate to="/admin" replace />}
+          element={isLoggedIn ? <ManageFoods /> : <Login />}
         />
 
         <Route
           path="/editfood/:id"
-          element={isLoggedIn ? <EditFood /> : <Navigate to="/admin" replace />}
+          element={isLoggedIn ? <EditFood /> : <Login />}
         />
+
       </Routes>
 
       <Footer />

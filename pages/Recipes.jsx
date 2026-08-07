@@ -1,125 +1,98 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Recipe.css";
+
 function Recipes() {
   const navigate = useNavigate();
 
-  const recipeData = [
-    {
-      id: 1,
-      name: "Chicken Biryani",
-      image:
-        "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=600",
-      time: "45 mins",
-      difficulty: "Medium",
-      rating: "4.9",
-      ingredients: "Rice, Chicken, Spices",
-    },
-    {
-      id: 2,
-      name: "Veg Pizza",
-      image:
-        "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600",
-      time: "30 mins",
-      difficulty: "Easy",
-      rating: "4.8",
-      ingredients: "Cheese, Vegetables, Dough",
-    },
-    {
-      id: 3,
-      name: "Burger",
-      image:
-        "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600",
-      time: "20 mins",
-      difficulty: "Easy",
-      rating: "4.7",
-      ingredients: "Bun, Patty, Cheese",
-    },
-    {
-      id: 4,
-      name: "Pasta",
-      image:
-        "https://png.pngtree.com/png-vector/20240721/ourmid/pngtree-a-bowl-of-pasta-with-tomatoes-and-basil-png-image_13182419.png",
-      time: "25 mins",
-      difficulty: "Easy",
-      rating: "4.8",
-      ingredients: "Pasta, Sauce, Cheese",
-    },
-    {
-      id: 5,
-      name: "Chocolate Cake",
-      image:
-        "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600",
-      time: "60 mins",
-      difficulty: "Hard",
-      rating: "5.0",
-      ingredients: "Chocolate, Flour, Eggs",
-    },
-    {
-      id: 6,
-      name: "Fresh Juice",
-      image:
-        "https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=600",
-      time: "10 mins",
-      difficulty: "Easy",
-      rating: "4.9",
-      ingredients: "Fresh Fruits",
-    },
-  ];
-
+  const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
 
-  const filteredRecipes = recipeData.filter((recipe) =>
-    recipe.name.toLowerCase().includes(search.toLowerCase())
-  );
+  useEffect(() => {
+    fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.meals) {
+          setRecipes(data.meals);
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  const searchRecipe = () => {
+    fetch(
+      `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setRecipes(data.meals || []);
+      });
+  };
 
   return (
     <div className="recipes">
+
       <div className="recipe-banner">
         <h1>🍽 Delicious Recipes</h1>
-
-        <p>Discover tasty recipes prepared by our expert chefs.</p>
+        <p>Explore recipes from TheMealDB API</p>
       </div>
 
       <div className="recipe-search">
+
         <input
           type="text"
-          placeholder="Search Recipes..."
+          placeholder="Search Recipe..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+
+        <button onClick={searchRecipe}>
+          Search
+        </button>
+
       </div>
 
       <div className="recipe-grid">
-        {filteredRecipes.map((recipe) => (
-          <div className="recipe-card" key={recipe.id}>
-            <img src={recipe.image} alt={recipe.name} />
+
+        {recipes.map((recipe) => (
+
+          <div className="recipe-card" key={recipe.idMeal}>
+
+            <img
+              src={recipe.strMealThumb}
+              alt={recipe.strMeal}
+            />
 
             <div className="recipe-content">
-              <h2>{recipe.name}</h2>
 
-              <p>⭐ {recipe.rating}</p>
+              <h2>{recipe.strMeal}</h2>
 
-              <p>⏱ {recipe.time}</p>
+              <p>
+                🍛 {recipe.strCategory}
+              </p>
 
-              <p>👨‍🍳 {recipe.difficulty}</p>
-
-              <p>🥗 {recipe.ingredients}</p>
+              <p>
+                🌍 {recipe.strArea}
+              </p>
 
               <button
                 className="recipe-btn"
                 onClick={() =>
-                  navigate(`/recipe/${recipe.id}`, {
+                  navigate("/recipe/" + recipe.idMeal, {
                     state: recipe,
                   })
                 }
               >
                 View Recipe
               </button>
+
             </div>
+
           </div>
+
         ))}
+
       </div>
+
     </div>
   );
 }
