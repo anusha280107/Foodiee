@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -5,15 +6,17 @@ pipeline {
         nodejs 'NodeJS'
     }
 
-   stage('Install') {
-    steps {
-        bat '''
-        if not exist "%WORKSPACE%\\.npm-cache" mkdir "%WORKSPACE%\\.npm-cache"
-        npm config set cache "%WORKSPACE%\\.npm-cache"
-        npm install
-        '''
-    }
-}
+    stages {
+
+        stage('Install') {
+            steps {
+                bat '''
+                if not exist "%WORKSPACE%\\.npm-cache" mkdir "%WORKSPACE%\\.npm-cache"
+                npm config set cache "%WORKSPACE%\\.npm-cache"
+                npm install
+                '''
+            }
+        }
 
         stage('Build') {
             steps {
