@@ -5,12 +5,15 @@ pipeline {
         nodejs 'NodeJS'
     }
 
-    stages {
-        stage('Install') {
-            steps {
-                bat 'npm install'
-            }
-        }
+   stage('Install') {
+    steps {
+        bat '''
+        if not exist "%WORKSPACE%\\.npm-cache" mkdir "%WORKSPACE%\\.npm-cache"
+        npm config set cache "%WORKSPACE%\\.npm-cache"
+        npm install
+        '''
+    }
+}
 
         stage('Build') {
             steps {
