@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -12,8 +11,7 @@ pipeline {
             steps {
                 bat '''
                 if not exist "%WORKSPACE%\\.npm-cache" mkdir "%WORKSPACE%\\.npm-cache"
-                npm config set cache "%WORKSPACE%\\.npm-cache"
-                npm install
+                npm install --cache "%WORKSPACE%\\.npm-cache"
                 '''
             }
         }
@@ -32,8 +30,18 @@ pipeline {
 
         stage('Archive Build') {
             steps {
-                archiveArtifacts artifacts: 'dist/**'
+                archiveArtifacts artifacts: 'dist/**', fingerprint: true
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'Build completed successfully.'
+        }
+
+        failure {
+            echo 'Build failed.'
         }
     }
 }
